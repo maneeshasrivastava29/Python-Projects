@@ -19,16 +19,14 @@ def recursive_triangle(x, n):
 
 # The difference value will determine how many shapes are needed to fill the line before the stars are printed.
     difference = star_print - line_number
-    # If difference is not zero, we will print that value of spaces before the stars. The star print will be the
-    # remainder, also known as line number.
+    # If difference is not zero, we will print that value of spaces before the stars. The star print will be the remainder, also known as line number.
     if difference != 0:
         line_print += ' '*difference
         line_print += '*'*line_number
     # If difference is zero, then we can just fill the line with stars.
     else:
         line_print += '*'*star_print
-    # If the line number is greater than one, we can return our string and use the recursive call to run the function
-    # again with the line number as one value less.
+    # If the line number is greater than one, we can return our string and use the recursive call to run the function again with the line number as one value less.
     if line_number > 1:
         return line_print+'\n'+str(recursive_triangle(line_number-1, star_print))
     # If the line number is exactly one, then we don't need to use the recursive call.
